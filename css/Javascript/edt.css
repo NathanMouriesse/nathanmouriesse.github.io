@@ -1,0 +1,76 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+
+a {
+    color: black;
+    font-size: x-large;
+}
+
+a:hover {
+    color: red;
+}
+
+#title {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.timetable {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.timetable td,
+.timetable th {
+    border: 1px solid #fad053;
+    padding: 8px;
+    text-align: center;
+    color: #fad053;
+}
+
+.timetable th {
+    background-color: #271549;
+    font-weight: bold;
+}
+
+.timetable tbody tr:nth-child(even) {
+    background-color: #271549;
+}
+
+.timetable tbody td:first-child {
+    font-weight: bold;
+    text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+    .timetable {
+        font-size: 12px;
+    }
+}
+
+#edt_content {
+    height: 100vh;
+    width: 100vw;
+    margin-left: -10px;
+    background-color: #271549;
+}
+
+h1 {
+    color: #fad053;
+}
+
+hr{
+    color: #fad053;
+}

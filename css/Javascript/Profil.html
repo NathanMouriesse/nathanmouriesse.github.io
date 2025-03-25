@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./profil.css">
+    <title>Profil</title>
+    <script>
+        var age = document.formulaire.age.value;
+        var prix = document.formulaire.prix.value;
+        var reduc = 0;
+        function affichReduc() {
+            if (age < 18) {
+                return prix = prix * 0.25;
+            }
+            else if (age >= 18 && age < 25) {
+                return prix = prix * 0.15;
+            }
+            else if (age >= 25 && age < 40) {
+                return prix;
+            }
+            else if (age >= 40 && age < 65) {
+                return prix = prix * 0.05;
+            }
+            else {
+                return prix = prix * 0.5;
+            }
+        }
+    </script>
+</head>
+
+<header>
+    <div class="logo">
+        <img src="./logoEpsiFondBlanc.svg" alt="logoEpsiFondBlanc">
+    </div>
+    <a href="./Accueil.html">Accueil</a>
+    <a href="./Profil.html">Profil</a>
+    <a href="./EDT.html">Emploi du temps</a>
+</header>
+
+<body>
+    <!-- Juste formulaire avec différents types pour adresse, numero de tel etc... -->
+    <div id="content">
+        <h1>Formulaire de Personne</h1>
+
+        <form name="formulaire">
+            <label for="age">Age :</label>
+            <input type="text" id="age" name="age" required>
+
+            <label for="prix">Prix :</label>
+            <input type="number" id="prix" name="prix" required></input>
+        </form>
+
+        <form name="form2">
+            <label for="ville-select">Choisissez une ville :</label>
+            <select id="ville-select">
+                <option value="paris">Paris</option>
+                <option value="londres">Londres</option>
+                <option value="new-york">New York</option>
+                <option value="tokyo">Tokyo</option>
+            </select>
+            <br><br>
+            <p id="pays"></p>
+        </form>
+        <script>
+            // Fonction pour afficher le nom du pays
+            function afficherPays() {
+                // Récupération de la valeur sélectionnée dans le menu déroulant
+                var villeSelect = document.getElementById("ville-select");
+                var ville = villeSelect.value;
+
+                // Tableau associatif avec les noms des pays correspondant aux villes
+                var pays = {
+                    "paris": "France",
+                    "londres": "Royaume-Uni",
+                    "new-york": "États-Unis",
+                    "tokyo": "Japon"
+                };
+
+                // Affichage du nom du pays correspondant à la ville sélectionnée
+                var paysText = "Le pays de " + ville + " est " + pays[ville] + ".";
+                document.getElementById("pays").innerHTML = paysText;
+            }
+
+            // Écouteur d'événement pour appeler la fonction afficherPays lorsque le menu déroulant est modifié
+            document.getElementById("ville-select").addEventListener("change", afficherPays);
+        </script>
+
+    </div>
+</body>
+
+</html>
